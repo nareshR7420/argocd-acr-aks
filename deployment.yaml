@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myhealth.web
+  name: myhealth.web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myhealth.web
+  template:
+    metadata:
+      labels:
+        app: myhealth.web
+    spec:
+      containers:
+        - name: myhealth.web
+          image: argocdacr.azurecr.io/myhealth.web:latest
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "256m"
+            requests:
+              memory: "256Mi"
+              cpu: "128m"
