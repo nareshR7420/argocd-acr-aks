@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myhealth.web
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://devopsokn.visualstudio.com/ArgoCDAKS/_git/AKS.git
+    targetRevision: HEAD
+    path: kube-manifest
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: myhealth.web
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
