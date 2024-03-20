@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: myhealth.web
-          image: argocdacr.azurecr.io/myhealth.web:latest
+          image: __ACR__/myhealth.web:latest
           ports:
             - containerPort: 80
           resources:
