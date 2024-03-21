@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: todo-app-service
+  name: myhealth.web
 spec:
   selector:
-    app: todo-app
+    app: myhealth.web
 
   type: LoadBalancer
   ports:
