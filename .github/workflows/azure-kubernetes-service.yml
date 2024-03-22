@@ -39,7 +39,7 @@ env:
   CONTAINER_NAME: "ArgocdACR"
   RESOURCE_GROUP: "ArgoCDRG"
   CLUSTER_NAME: "nrcluster"
-  DEPLOYMENT_MANIFEST_PATH: "docker-compose.ci.build.yml"
+  DEPLOYMENT_MANIFEST_PATH: "docker-compose.yml"
 
 jobs:
   buildImage:
